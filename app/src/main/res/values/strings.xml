@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KRIS</string>
+
+    <string name="muuda_kasutajat">Muuda kasutajat</string>
+    <string name="kasutaja_nimi_abitekst">Kasutajanimi</string>
+    <string name="kasutaja_roll_abitekst">Kasutaja roll</string>
 </resources>

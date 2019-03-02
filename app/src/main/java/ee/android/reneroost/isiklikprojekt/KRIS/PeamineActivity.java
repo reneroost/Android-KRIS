@@ -22,15 +22,15 @@ public class PeamineActivity extends AppCompatActivity {
         setSupportActionBar(tooriistariba);
         tooriistariba.setTitle(looTooriistaribaPealkiri());
 
-//        FragmentManager fragmendiHaldur = getSupportFragmentManager();
-//        Fragment fragment = fragmendiHaldur.findFragmentById(R.id.fragment_konteiner_sisemine);
-//
-//        if(fragment == null) {
-//            fragment = new AvalehtFragment();
-//            fragmendiHaldur.beginTransaction()
-//                    .add(R.id.fragment_konteiner_sisemine, fragment)
-//                    .commit();
-//        }
+        FragmentManager fragmendiHaldur = getSupportFragmentManager();
+        Fragment fragment = fragmendiHaldur.findFragmentById(R.id.fragment_konteiner);
+
+        if(fragment == null) {
+            fragment = new AvalehtFragment();
+            fragmendiHaldur.beginTransaction()
+                    .add(R.id.fragment_konteiner, fragment)
+                    .commit();
+        }
 
     }
 
