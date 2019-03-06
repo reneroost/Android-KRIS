@@ -13,12 +13,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class RolliValikFragment extends Fragment {
+public class KohtunikuabiValikFragment extends Fragment {
 
-    private static final String SILT = "RolliValikFragment";
+    private static final String SILT = "KohtunikuabiValikFragment";
 
     private RecyclerView mRolliValikTaaskasutajaVaade;
-    private RolliAdapter mAdapter;
+    private KohtunikuabiValikFragment.RolliAdapter mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater taispuhuja, ViewGroup konteiner, Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class RolliValikFragment extends Fragment {
         Haldurid haldurid = Haldurid.saa(getActivity());
         List<Haldur> halduriteNimekiri = haldurid.saaHaldurid();
 
-        mAdapter = new RolliAdapter(halduriteNimekiri);
+        mAdapter = new KohtunikuabiValikFragment.RolliAdapter(halduriteNimekiri);
         mRolliValikTaaskasutajaVaade.setAdapter(mAdapter);
     }
 
@@ -62,7 +62,7 @@ public class RolliValikFragment extends Fragment {
         }
     }
 
-    private class RolliAdapter extends RecyclerView.Adapter<RolliHoidja> {
+    private class RolliAdapter extends RecyclerView.Adapter<KohtunikuabiValikFragment.RolliHoidja> {
         private List<Haldur> mHaldurid;
 
         public RolliAdapter(List<Haldur> haldurid) {
@@ -72,14 +72,14 @@ public class RolliValikFragment extends Fragment {
 
         @NonNull
         @Override
-        public RolliHoidja onCreateViewHolder(@NonNull ViewGroup vanem, int i) {
+        public KohtunikuabiValikFragment.RolliHoidja onCreateViewHolder(@NonNull ViewGroup vanem, int i) {
             LayoutInflater paigutuseTaispuhuja = LayoutInflater.from(getActivity());
 
-            return new RolliHoidja(paigutuseTaispuhuja, vanem);
+            return new KohtunikuabiValikFragment.RolliHoidja(paigutuseTaispuhuja, vanem);
         }
 
         @Override
-        public void onBindViewHolder(@NonNull RolliHoidja rolliHoidja, int positsioon) {
+        public void onBindViewHolder(@NonNull KohtunikuabiValikFragment.RolliHoidja rolliHoidja, int positsioon) {
             Haldur haldur = mHaldurid.get(positsioon);
             rolliHoidja.seo(haldur);
         }
@@ -90,3 +90,4 @@ public class RolliValikFragment extends Fragment {
         }
     }
 }
+

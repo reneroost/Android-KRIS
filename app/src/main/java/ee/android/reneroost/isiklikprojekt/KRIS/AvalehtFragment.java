@@ -31,7 +31,7 @@ public class AvalehtFragment extends Fragment implements View.OnClickListener{
         Fragment fragment = null;
         switch(vaade.getId()) {
             case R.id.muuda_kasutajat_nupp:
-                fragment = new RolliValikFragment();
+                fragment = new HalduriValikFragment();
                 asendaFragment(fragment);
                 break;
         }
