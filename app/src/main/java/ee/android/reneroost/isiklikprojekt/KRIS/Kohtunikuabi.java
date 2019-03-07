@@ -7,8 +7,12 @@ public class Kohtunikuabi extends Kasutaja {
     // boolean ja nii edasi
     boolean onKohtunikuabi = true;
 
-    public Kohtunikuabi(String nimi, boolean sugu, boolean juukseVarv) {
-        super(nimi, sugu, juukseVarv);
+    public Kohtunikuabi(String nimi, int emojiId, boolean sugu, boolean juukseVarv) {
+        super(nimi, emojiId, sugu, juukseVarv);
+    }
+
+    public String saaRoll() {
+        return "kohtunikuabi";
     }
 
 }

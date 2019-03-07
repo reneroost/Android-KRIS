@@ -1,5 +1,6 @@
 package ee.android.reneroost.isiklikprojekt.KRIS;
 
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+
+import java.util.Objects;
 
 public class PeamineActivity extends AppCompatActivity {
 
@@ -20,7 +23,8 @@ public class PeamineActivity extends AppCompatActivity {
 
         Toolbar tooriistariba = (Toolbar) findViewById(R.id.tooriistariba);
         setSupportActionBar(tooriistariba);
-        tooriistariba.setTitle(looTooriistaribaPealkiri());
+        Objects.requireNonNull(getSupportActionBar()).setTitle(looTooriistaribaPealkiri());
+
 
         FragmentManager fragmendiHaldur = getSupportFragmentManager();
         Fragment fragment = fragmendiHaldur.findFragmentById(R.id.fragment_konteiner);
@@ -32,9 +36,8 @@ public class PeamineActivity extends AppCompatActivity {
                     .commit();
         }
 
+
     }
-
-
 
 
     private String looTooriistaribaPealkiri() {

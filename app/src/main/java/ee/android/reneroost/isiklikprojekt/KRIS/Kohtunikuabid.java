@@ -24,18 +24,18 @@ public class Kohtunikuabid {
 
     private Kohtunikuabid(Context kontekst) {
         mKohtunikuabid = new ArrayList<>();
-        Kohtunikuabi kohtunikuabi1 = new Kohtunikuabi("Anneli Luur", true, true);
-        Kohtunikuabi kohtunikuabi2 = new Kohtunikuabi("Anu Kruus", true, false);
-        Kohtunikuabi kohtunikuabi3 = new Kohtunikuabi("Ave Talts", true, true);
-        Kohtunikuabi kohtunikuabi4 = new Kohtunikuabi("Eva Nemvalts", true, false);
-        Kohtunikuabi kohtunikuabi5 = new Kohtunikuabi("Helle Eduvald", true, true);
-        Kohtunikuabi kohtunikuabi6 = new Kohtunikuabi("Ilona Kirm", true, true);
-        Kohtunikuabi kohtunikuabi7 = new Kohtunikuabi("Jaan Unt", false, true);
-        Kohtunikuabi kohtunikuabi8 = new Kohtunikuabi("Kariina Orr", true, false);
-        Kohtunikuabi kohtunikuabi9 = new Kohtunikuabi("Katrin Kokk", true, false);
-        Kohtunikuabi kohtunikuabi10 = new Kohtunikuabi("Sigrid Orumets", true, true);
-        Kohtunikuabi kohtunikuabi11 = new Kohtunikuabi("Tiiu Karu", true, true);
-        Kohtunikuabi kohtunikuabi12 = new Kohtunikuabi("Ülle Juhanson", true, false);
+        Kohtunikuabi kohtunikuabi1 = new Kohtunikuabi("Anneli Luur", R.drawable.kohtunikuabi_naine_brunett,true, true);
+        Kohtunikuabi kohtunikuabi2 = new Kohtunikuabi("Anu Kruus", R.drawable.kohtunikuabi_naine_blond, true, false);
+        Kohtunikuabi kohtunikuabi3 = new Kohtunikuabi("Ave Talts", R.drawable.kohtunikuabi_naine_brunett, true, true);
+        Kohtunikuabi kohtunikuabi4 = new Kohtunikuabi("Eva Nemvalts", R.drawable.kohtunikuabi_naine_blond, true, false);
+        Kohtunikuabi kohtunikuabi5 = new Kohtunikuabi("Helle Eduvald", R.drawable.kohtunikuabi_naine_brunett, true, true);
+        Kohtunikuabi kohtunikuabi6 = new Kohtunikuabi("Ilona Kirm", R.drawable.kohtunikuabi_naine_brunett, true, true);
+        Kohtunikuabi kohtunikuabi7 = new Kohtunikuabi("Jaan Unt", R.drawable.haldur_mees_brunett, false, true);
+        Kohtunikuabi kohtunikuabi8 = new Kohtunikuabi("Kariina Orr", R.drawable.kohtunikuabi_naine_blond, true, false);
+        Kohtunikuabi kohtunikuabi9 = new Kohtunikuabi("Katrin Kokk", R.drawable.kohtunikuabi_naine_blond, true, false);
+        Kohtunikuabi kohtunikuabi10 = new Kohtunikuabi("Sigrid Orumets", R.drawable.kohtunikuabi_naine_brunett, true, true);
+        Kohtunikuabi kohtunikuabi11 = new Kohtunikuabi("Tiiu Karu", R.drawable.kohtunikuabi_naine_brunett, true, true);
+        Kohtunikuabi kohtunikuabi12 = new Kohtunikuabi("Ülle Juhanson", R.drawable.kohtunikuabi_naine_blond, true, false);
 
         mKohtunikuabid.add(kohtunikuabi1);
         mKohtunikuabid.add(kohtunikuabi2);
@@ -49,5 +49,9 @@ public class Kohtunikuabid {
         mKohtunikuabid.add(kohtunikuabi10);
         mKohtunikuabid.add(kohtunikuabi11);
         mKohtunikuabid.add(kohtunikuabi12);
+    }
+
+    public List<Kohtunikuabi> saaKohtunikuabid() {
+        return mKohtunikuabid;
     }
 }

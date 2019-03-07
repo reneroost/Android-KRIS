@@ -1,5 +1,6 @@
 package ee.android.reneroost.isiklikprojekt.KRIS;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -28,13 +29,18 @@ public class AvalehtFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View vaade) {
+
+        Intent kavatsus = new Intent(getActivity(), RolliValimineActivity.class);
+        startActivity(kavatsus);
+        /*
         Fragment fragment = null;
         switch(vaade.getId()) {
             case R.id.muuda_kasutajat_nupp:
-                fragment = new HalduriValikFragment();
+                fragment = new KohtunikuabiValikFragment();
                 asendaFragment(fragment);
                 break;
         }
+        */
     }
 
     public void asendaFragment(Fragment moniFragment) {

@@ -17,12 +17,47 @@ public class HalduriValikFragment extends Fragment {
 
     private static final String SILT = "HalduriValikFragment";
 
+    @Override
+    public View onCreateView(LayoutInflater taispuhuja, ViewGroup konteiner, Bundle savedInstanceState) {
+
+        RecyclerView halduriTaaskasutaja = (RecyclerView) taispuhuja.inflate(
+                R.layout.fragment_rolli_valimine, konteiner, false);
+
+        String[] halduriteNimed = new String[Haldurid.saa(getActivity()).saaHaldurid().size()];
+        for(int i = 0; i < halduriteNimed.length; i++) {
+            halduriteNimed[i] = Haldurid.saa(getActivity()).saaHaldurid().get(i).saaNimi();
+        }
+
+        int[] halduritePildid = new int[Haldurid.saa(getActivity()).saaHaldurid().size()];
+        for(int i = 0; i < halduritePildid.length; i++) {
+            halduritePildid[i] = Haldurid.saa(getActivity()).saaHaldurid().get(i).saaPildiRessursiId();
+        }
+
+        KasutajaKirjeldusAdapter adapter = new KasutajaKirjeldusAdapter(halduriteNimed, halduritePildid);
+        halduriTaaskasutaja.setAdapter(adapter);
+
+        LinearLayoutManager paigutuseHaldur = new LinearLayoutManager(getActivity());
+        halduriTaaskasutaja.setLayoutManager(paigutuseHaldur);
+
+        adapter.maaraListener(new KasutajaKirjeldusAdapter.Listener() {
+            @Override
+            public void onClick(int positsioon) {
+                getActivity().finish();
+            }
+        });
+
+        return halduriTaaskasutaja;
+    }
+
+
+
+/*
     private RecyclerView mRolliValikTaaskasutajaVaade;
     private RolliAdapter mAdapter;
 
     @Override
     public View onCreateView(LayoutInflater taispuhuja, ViewGroup konteiner, Bundle savedInstanceState) {
-        View vaade = taispuhuja.inflate(R.layout.fragment_rolli_valik, konteiner, false);
+        View vaade = taispuhuja.inflate(R.layout.fragment_rolli_valimine, konteiner, false);
 
         mRolliValikTaaskasutajaVaade = (RecyclerView) vaade.findViewById(R.id.roll_taaskasutaja_vaade);
         mRolliValikTaaskasutajaVaade.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -89,4 +124,5 @@ public class HalduriValikFragment extends Fragment {
             return mHaldurid.size();
         }
     }
+    */
 }
