@@ -3,19 +3,20 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp">
 
         <TextView
             android:id="@+id/kasutaja_nimi_abitekst_tekstivaade"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="8"
             android:textSize="24sp"
             android:text="@string/kasutaja_nimi_abitekst"/>
 
@@ -23,21 +24,21 @@
             android:id="@+id/kasutaja_nimi_tekstivaade"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="10"
             android:textSize="24sp"/>
 
     </LinearLayout>
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp">
 
         <TextView
             android:id="@+id/kasutaja_roll_abitekst_tekstivaade"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="8"
             android:textSize="24sp"
             android:text="@string/kasutaja_roll_abitekst"/>
 
@@ -45,25 +46,53 @@
             android:id="@+id/kasutaja_roll_tekstivaade"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="10"
+            android:textSize="24sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/muuda_valitud_kasutajat_nupp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/vali_teine_kasutaja_nupp"
+        android:layout_margin="8dp"
+        style="@style/Widget.AppCompat.Button.Colored"/>
+
+
+    <View style="@style/HorisontaalneVahejoon"
+        android:layout_margin="8dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:text="@string/valitud_kinnisvara_abitekst"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:text="Tallinna teletorn"
             android:textSize="24sp"/>
 
     </LinearLayout>
     <Button
-        android:id="@+id/muuda_kasutajat_nupp"
-        android:layout_width="wrap_content"
+        android:id="@+id/muuda_valitud_kinnisvara_nupp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/muuda_kasutajat"/>
+        android:text="@string/vali_teine_kinnisvara_nupp"
+        android:layout_margin="8dp"
+        style="@style/Widget.AppCompat.Button.Colored"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tallinna teletorn"
-        android:layout_marginTop="32dp"
-        android:textSize="24sp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Muuda kinnisvara"/>
+    <View style="@style/HorisontaalneVahejoon"
+        android:layout_margin="8dp"/>
 
 </LinearLayout>

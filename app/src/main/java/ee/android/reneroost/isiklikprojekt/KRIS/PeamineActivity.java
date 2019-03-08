@@ -35,13 +35,11 @@ public class PeamineActivity extends AppCompatActivity {
                     .add(R.id.fragment_konteiner, fragment)
                     .commit();
         }
-
-
     }
 
 
     private String looTooriistaribaPealkiri() {
-        return getString(R.string.app_name) + " " + saaVersiooniNumberStringina().substring(0, 3);
+        return getString(R.string.app_name) + "   ver." + saaVersiooniNumberStringina().substring(0, 3);
     }
 
     private String saaVersiooniNumberStringina() {

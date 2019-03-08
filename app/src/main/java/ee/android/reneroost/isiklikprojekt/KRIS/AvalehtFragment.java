@@ -20,7 +20,7 @@ public class AvalehtFragment extends Fragment implements View.OnClickListener{
 
         View vaade = taispuhuja.inflate(R.layout.fragment_avaleht, konteiner, false);
 
-        Button muudaRolliNupp = (Button) vaade.findViewById(R.id.muuda_kasutajat_nupp);
+        Button muudaRolliNupp = (Button) vaade.findViewById(R.id.muuda_valitud_kasutajat_nupp);
         muudaRolliNupp.setOnClickListener(this);
 
         Log.w(SILT, "fragment kaivitus");

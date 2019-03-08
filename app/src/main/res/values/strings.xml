@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">KRIS</string>
+    <string name="app_name">KRIS0</string>
 
-    <string name="muuda_kasutajat">Muuda kasutajat</string>
+    <string name="vali_teine_kasutaja_nupp">Vali muu kasutaja</string>
     <string name="kasutaja_nimi_abitekst">Kasutajanimi</string>
     <string name="kasutaja_roll_abitekst">Kasutaja roll</string>
 
+    <string name="valitud_kinnisvara_abitekst">Valitud kinnisvara</string>
+    <string name="vali_teine_kinnisvara_nupp">Vali muu kinnisvara</string>
 
     <string name="haldur_vaheleht">Haldurid</string>
     <string name="kohtunikuabi_vaheleht">Kohtunikuabid</string>
