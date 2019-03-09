@@ -14,6 +14,8 @@ import android.util.Log;
 
 public class RolliValimineActivity extends AppCompatActivity {
 
+    private static final String SILT = "RolliVaimineActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,27 +57,24 @@ public class RolliValimineActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 2;
+            return 3;
         }
 
         @Override
         public Fragment getItem(int positsioon) {
-            switch (positsioon) {
-                case 0:
-                    return new HalduriValikFragment();
-                case 1:
-                    return new KohtunikuabiValikFragment();
-            }
-            return null;
+            return RolliValimineFragment.uusInstants(positsioon);
         }
 
         @Override
         public CharSequence getPageTitle(int positsioon) {
             switch(positsioon) {
                 case 0:
-                    return getResources().getText(R.string.haldur_vaheleht);
+                    return getResources().getText(R.string.kohtunikuabid_vaheleht);
                 case 1:
-                    return getResources().getText(R.string.kohtunikuabi_vaheleht);
+                    return getResources().getText(R.string.haldurid_vaheleht);
+                case 2:
+                    return getResources().getText(R.string.halduriabid_vaheleht);
+
             }
             return null;
         }

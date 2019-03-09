@@ -21,6 +21,16 @@ public class KasutajadSingleton {
         return mKasutajad;
     }
 
+    public int saaAntudAmetigaKasutajateHulk(int amet) {
+        int hulk = 0;
+        for (Kasutaja kasutaja: mKasutajad) {
+            if (kasutaja.saaAmet() == amet) {
+                hulk++;
+            }
+        }
+        return hulk;
+    }
+
     private KasutajadSingleton() {
         mKasutajad = new ArrayList<>();
 
@@ -49,7 +59,7 @@ public class KasutajadSingleton {
         Kohtunikuabi kohtunikuabi8 = new Kohtunikuabi("Eva Nemvalts", 0, R.drawable.kohtunikuabi_naine_blond, true, false);
         Kohtunikuabi kohtunikuabi9 = new Kohtunikuabi("Helle Eduvald", 0, R.drawable.kohtunikuabi_naine_brunett, true, true);
         Kohtunikuabi kohtunikuabi10 = new Kohtunikuabi("Ilona Kirm", 0, R.drawable.kohtunikuabi_naine_brunett, true, true);
-        Kohtunikuabi kohtunikuabi11 = new Kohtunikuabi("Jaan Unt", 0, R.drawable.haldur_mees_brunett, false, true);
+        Kohtunikuabi kohtunikuabi11 = new Kohtunikuabi("Jaan Unt", 0, R.drawable.kohtunikuabi_mees_brunett, false, true);
         Kohtunikuabi kohtunikuabi12 = new Kohtunikuabi("Kariina Orr", 0, R.drawable.kohtunikuabi_naine_blond, true, false);
         Kohtunikuabi kohtunikuabi13 = new Kohtunikuabi("Katrin Kokk", 0, R.drawable.kohtunikuabi_naine_blond, true, false);
         Kohtunikuabi kohtunikuabi14 = new Kohtunikuabi("Markko Voll", 0, R.drawable.kohtunikuabi_mees_brunett,false, true);
@@ -78,7 +88,5 @@ public class KasutajadSingleton {
         mKasutajad.add(kohtunikuabi17);
         mKasutajad.add(kohtunikuabi18);
         mKasutajad.add(kohtunikuabi19);
-
-
     }
 }

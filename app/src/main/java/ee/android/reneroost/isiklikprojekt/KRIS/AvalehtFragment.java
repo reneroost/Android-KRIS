@@ -37,7 +37,6 @@ public class AvalehtFragment extends Fragment implements View.OnClickListener{
         Button muudaRolliNupp = (Button) vaade.findViewById(R.id.muuda_valitud_kasutajat_nupp);
         muudaRolliNupp.setOnClickListener(this);
 
-        Log.w(SILT, "fragment kaivitus");
         return vaade;
     }
 
@@ -53,8 +52,7 @@ public class AvalehtFragment extends Fragment implements View.OnClickListener{
     public void onActivityResult(int kutsungKood, int vastusKood, Intent kavatsus) {
         if(kutsungKood == KUTSUNGI_KOOD_ROLL) {
             if(vastusKood == Activity.RESULT_OK) {
-                Log.w(SILT,  kavatsus.getExtras().getString(HalduriValikFragment.EKSTRA_ROLLI_NIMI));
-                valitudHaldur = kavatsus.getExtras().getInt((HalduriValikFragment.EKSTRA_ROLLI_ID));
+                valitudHaldur = kavatsus.getExtras().getInt((RolliValimineFragment.EKSTRA_ROLLI_ID));
                 getFragmentManager().beginTransaction().detach(this).attach(this).commit();
             }
         }
