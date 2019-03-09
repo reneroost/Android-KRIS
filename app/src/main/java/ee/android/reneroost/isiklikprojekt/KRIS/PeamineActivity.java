@@ -37,7 +37,6 @@ public class PeamineActivity extends AppCompatActivity {
         }
     }
 
-
     private String looTooriistaribaPealkiri() {
         return getString(R.string.app_name) + "   ver." + saaVersiooniNumberStringina().substring(0, 3);
     }

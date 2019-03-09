@@ -4,8 +4,8 @@ public class Haldur extends Kasutaja {
 
     private boolean mPohiHaldur;
 
-    public Haldur(String nimi, int emojiId, boolean sugu, boolean juukseVarv, boolean pohiHaldur){
-        super(nimi, emojiId, sugu, juukseVarv);
+    public Haldur(String nimi, int amet, int emojiId, boolean sugu, boolean juukseVarv, boolean pohiHaldur){
+        super(nimi, amet, emojiId, sugu, juukseVarv);
         mPohiHaldur = pohiHaldur;
     }
 

@@ -17,6 +17,9 @@ public class KohtunikuabiValikFragment extends Fragment {
 
     private static final String SILT = "KohtuabiValikFragment";
 
+    private List<Kasutaja> kasutajad = KasutajadSingleton.saaInstants(getContext()).saaKasutajad();
+    int kohtunikeabisid = 19;
+
 
     @Override
     public View onCreateView(LayoutInflater taispuhuja, ViewGroup konteiner, Bundle savedInstanceState) {
@@ -24,14 +27,16 @@ public class KohtunikuabiValikFragment extends Fragment {
         RecyclerView kohtunikuabiTaaskasutaja = (RecyclerView) taispuhuja.inflate(
                 R.layout.fragment_rolli_valimine, konteiner, false);
 
-        String[] kohtunikeabideNimed = new String[Kohtunikuabid.saa(getActivity()).saaKohtunikuabid().size()];
-        for(int i = 0; i < kohtunikeabideNimed.length; i++) {
-            kohtunikeabideNimed[i] = Kohtunikuabid.saa(getActivity()).saaKohtunikuabid().get(i).saaNimi();
-        }
-
-        int[] kohtunikeabidePildid = new int[Kohtunikuabid.saa(getActivity()).saaKohtunikuabid().size()];
-        for(int i = 0; i < kohtunikeabidePildid.length; i++) {
-            kohtunikeabidePildid[i] = Kohtunikuabid.saa(getActivity()).saaKohtunikuabid().get(i).saaPildiRessursiId();
+        String[] kohtunikeabideNimed = new String[kohtunikeabisid];
+        int[] kohtunikeabidePildid = new int[kohtunikeabisid];
+        Kasutaja kasutaja;
+        for(int i = 0, j = 0; i < kasutajad.size(); i++) {
+            kasutaja = kasutajad.get(i);
+            if (kasutaja.saaAmet() == 0 || kasutaja.saaAmet() == 0) {
+                kohtunikeabideNimed[j] = kasutaja.saaNimi();
+                kohtunikeabidePildid[j] = kasutaja.saaPildiRessursiId();
+                j++;
+            }
         }
 
         KasutajaKirjeldusAdapter adapter = new KasutajaKirjeldusAdapter(kohtunikeabideNimed, kohtunikeabidePildid);
