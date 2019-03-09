@@ -17,13 +17,12 @@ import java.util.Objects;
 public class RolliValimineFragment extends Fragment {
 
     private static final String SILT = "RolliValimineFragment";
-    public static final String EKSTRA_ROLLI_NIMI = "ee.android.reneroost.isiklikprojekt.KRIS.rolli_nimi";
     public static final String EKSTRA_ROLLI_ID = "ee.android.reneroost.isiklikprojekt.KRIS.rolli_id";
 
     private static final String ARGUMENT_VALITUD_AMET = "valitud_amet";
     private int valitudAmet;
 
-    KasutajadSingleton kasutajadSingleton = KasutajadSingleton.saaInstants(getContext());
+    KasutajadSingleton kasutajadSingleton = KasutajadSingleton.saaInstants();
     private List<Kasutaja> kasutajad = kasutajadSingleton.saaKasutajad();
 
     String[] halduriteNimed;
@@ -47,7 +46,7 @@ public class RolliValimineFragment extends Fragment {
     public View onCreateView(LayoutInflater taispuhuja, ViewGroup konteiner, Bundle savedInstanceState) {
 
         RecyclerView halduriTaaskasutaja = (RecyclerView) taispuhuja.inflate(
-                R.layout.fragment_rolli_valimine, konteiner, false);
+                R.layout.fragment_nimekirjast_valimine, konteiner, false);
 
         Kasutaja kasutaja;
         int antudAmetigaKasutajateHulk =
@@ -73,10 +72,6 @@ public class RolliValimineFragment extends Fragment {
             @Override
             public void onClick(int positsioon) {
 
-                Toast rost = Toast.makeText(getContext(), getResources().getString(R.string.valisid_uue_kasutaja), Toast.LENGTH_SHORT);
-                rost.show();
-                Intent andmed = new Intent();
-
                 int kasutajaId = 0;
                 for(int i = 0; i < kasutajad.size(); i++) {
                     if (kasutajad.get(i).saaNimi().equals(halduriteNimed[positsioon])) {
@@ -84,6 +79,12 @@ public class RolliValimineFragment extends Fragment {
                     }
                 }
 
+                Toast rost = Toast.makeText(getContext(),
+                        kasutajad.get(kasutajaId).saaNimi() + getResources().getString(R.string.valitud), Toast.LENGTH_LONG);
+                rost.show();
+
+
+                Intent andmed = new Intent();
                 andmed.putExtra(EKSTRA_ROLLI_ID, kasutajaId);
                 Objects.requireNonNull(getActivity()).setResult(Activity.RESULT_OK, andmed);
                 getActivity().finish();

@@ -16,4 +16,19 @@ public class Kinnisvara {
         mVaartusEur = vaartusEur;
     }
 
+    public int saaRegistriosaNr() {
+        return mRegistriosaNr;
+    }
+
+    public String saaRegistriosaNrStringina() {
+        return String.valueOf(mRegistriosaNr);
+    }
+
+    public String saaKinnisvaraNimi() {
+        return mKinnisvaraNimi;
+    }
+
+    public String saaOmanikuNimi() {
+        return mOmanik;
+    }
 }

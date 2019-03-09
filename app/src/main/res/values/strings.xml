@@ -8,10 +8,13 @@
     <string name="valitud_kinnisvara_abitekst">Valitud kinnisvara</string>
     <string name="vali_teine_kinnisvara_nupp">Vali muu kinnisvara</string>
 
+    <string name="toimingud_kinnisvaraga">Toimingud kinnisvaraga</string>
+
+
     <string name="kohtunikuabid_vaheleht">Kohtunikuabid</string>
     <string name="haldurid_vaheleht">Haldurid</string>
     <string name="halduriabid_vaheleht">Halduriabid</string>
-    <string name="valisid_uue_kasutaja">Valisid uue kasutaja</string>
+    <string name="valitud">\u0020valitud!</string>
 
     <string name="emoji_kirjeldus">Emoji, mis kujutab umbkaudselt antud isikut</string>
 </resources>

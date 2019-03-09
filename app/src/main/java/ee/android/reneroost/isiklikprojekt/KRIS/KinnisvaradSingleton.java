@@ -1,24 +1,26 @@
 package ee.android.reneroost.isiklikprojekt.KRIS;
 
-import android.content.Context;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Kinnisvarad {
+public class KinnisvaradSingleton {
 
-    private static Kinnisvarad sKinnisvarad;
+    private static KinnisvaradSingleton sKinnisvaradSingleton;
 
     private List<Kinnisvara> mKinnisvarad;
 
-    public static synchronized Kinnisvarad saa() {
-        if (sKinnisvarad == null) {
-            sKinnisvarad = new Kinnisvarad();
+    public static synchronized KinnisvaradSingleton saaInstants() {
+        if (sKinnisvaradSingleton == null) {
+            sKinnisvaradSingleton = new KinnisvaradSingleton();
         }
-        return sKinnisvarad;
+        return sKinnisvaradSingleton;
     }
 
-    private Kinnisvarad() {
+    public List<Kinnisvara> saaKinnisvarad() {
+        return mKinnisvarad;
+    }
+
+    private KinnisvaradSingleton() {
         mKinnisvarad = new ArrayList<>();
         Kinnisvara kinnisvara1 = new Kinnisvara(81588, "Coca-Cola Plaza",
                 "Hobujaama 5, 10151, Tallinn", "Katrin Hunt", 600000);
@@ -79,6 +81,27 @@ public class Kinnisvarad {
 
         Kinnisvara kinnisvara20 = new Kinnisvara(11488, "Toompea loss",
                 "Lossi plats 1a, 10137, Tallinn", "Kaja Adamson", 4000000);
+
+        mKinnisvarad.add(kinnisvara1);
+        mKinnisvarad.add(kinnisvara2);
+        mKinnisvarad.add(kinnisvara3);
+        mKinnisvarad.add(kinnisvara4);
+        mKinnisvarad.add(kinnisvara5);
+        mKinnisvarad.add(kinnisvara6);
+        mKinnisvarad.add(kinnisvara7);
+        mKinnisvarad.add(kinnisvara8);
+        mKinnisvarad.add(kinnisvara9);
+        mKinnisvarad.add(kinnisvara10);
+        mKinnisvarad.add(kinnisvara11);
+        mKinnisvarad.add(kinnisvara12);
+        mKinnisvarad.add(kinnisvara13);
+        mKinnisvarad.add(kinnisvara14);
+        mKinnisvarad.add(kinnisvara15);
+        mKinnisvarad.add(kinnisvara16);
+        mKinnisvarad.add(kinnisvara17);
+        mKinnisvarad.add(kinnisvara18);
+        mKinnisvarad.add(kinnisvara19);
+        mKinnisvarad.add(kinnisvara20);
     }
 
 }

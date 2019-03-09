@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RolliValimineActivity">
+    tools:context="ee.android.reneroost.isiklikprojekt.KRIS.RolliValimineActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -13,11 +13,6 @@
 
         <include layout="@layout/tooriistariba_peamine"
             android:id="@+id/tooriistariba"/>
-
-        <!--<android.support.v7.widget.Toolbar-->
-            <!--android:id="@+id/tooriistariba2"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?attr/actionBarSize"/>-->
 
         <android.support.design.widget.TabLayout
             android:id="@+id/vahelehed"

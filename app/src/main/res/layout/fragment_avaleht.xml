@@ -1,98 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp">
-
+    android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="4dp">
+        android:orientation="vertical"
+        android:padding="8dp">
 
-        <TextView
-            android:id="@+id/kasutaja_nimi_abitekst_tekstivaade"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="8"
-            android:textSize="24sp"
-            android:text="@string/kasutaja_nimi_abitekst"/>
+            android:orientation="horizontal"
+            android:padding="4dp">
 
-        <TextView
-            android:id="@+id/kasutaja_nimi_tekstivaade"
-            android:layout_width="0dp"
+            <TextView
+                android:id="@+id/kasutaja_nimi_abitekst_tekstivaade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="@string/kasutaja_nimi_abitekst"
+                style="@style/AvalehtAbitekst"/>
+
+            <TextView
+                android:id="@+id/kasutaja_nimi_tekstivaade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                style="@style/AvalehtPõhitekst"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:textSize="24sp"/>
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/kasutaja_roll_abitekst_tekstivaade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="@string/kasutaja_roll_abitekst"
+                style="@style/AvalehtAbitekst"/>
+
+            <TextView
+                android:id="@+id/kasutaja_roll_tekstivaade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                style="@style/AvalehtPõhitekst"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/muuda_valitud_kasutajat_nupp"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/vali_teine_kasutaja_nupp"
+            android:layout_margin="8dp"
+            android:drawableStart="@drawable/vali_muu_kasutaja"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+
+
+        <View style="@style/HorisontaalneVahejoon"
+            android:layout_margin="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="@string/valitud_kinnisvara_abitekst"
+                style="@style/AvalehtAbitekst"/>
+
+            <TextView
+                android:id="@+id/kinnisvara_teksti_vaade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                style="@style/AvalehtPõhitekst"/>
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/muuda_valitud_kinnisvara_nupp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/vali_teine_kinnisvara_nupp"
+            android:layout_margin="8dp"
+            android:drawableStart="@drawable/vali_muu_kinnisvara"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+
+        <View style="@style/HorisontaalneVahejoon"
+            android:layout_margin="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/toimingud_kinnisvaraga"
+            style="@style/AvalehtAbitekst"/>
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="4dp">
-
-        <TextView
-            android:id="@+id/kasutaja_roll_abitekst_tekstivaade"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="8"
-            android:textSize="24sp"
-            android:text="@string/kasutaja_roll_abitekst"/>
-
-        <TextView
-            android:id="@+id/kasutaja_roll_tekstivaade"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:textSize="24sp"/>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/muuda_valitud_kasutajat_nupp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/vali_teine_kasutaja_nupp"
-        android:layout_margin="8dp"
-        style="@style/Widget.AppCompat.Button.Colored"/>
-
-
-    <View style="@style/HorisontaalneVahejoon"
-        android:layout_margin="8dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="4dp">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="8"
-            android:text="@string/valitud_kinnisvara_abitekst"
-            android:textSize="24sp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:text="Tallinna teletorn"
-            android:textSize="24sp"/>
-
-    </LinearLayout>
-    <Button
-        android:id="@+id/muuda_valitud_kinnisvara_nupp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/vali_teine_kinnisvara_nupp"
-        android:layout_margin="8dp"
-        style="@style/Widget.AppCompat.Button.Colored"/>
-
-    <View style="@style/HorisontaalneVahejoon"
-        android:layout_margin="8dp"/>
-
-</LinearLayout>
+</ScrollView>

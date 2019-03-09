@@ -10,7 +10,7 @@ public class KasutajadSingleton {
 
     private List<Kasutaja> mKasutajad;
 
-    public static KasutajadSingleton saaInstants(Context kontekst) {
+    public static KasutajadSingleton saaInstants() {
         if(sKasutajadSingleton == null) {
             sKasutajadSingleton = new KasutajadSingleton();
         }
