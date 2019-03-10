@@ -16,5 +16,8 @@
     <string name="halduriabid_vaheleht">Halduriabid</string>
     <string name="valitud">\u0020valitud!</string>
 
+
+    <string name="omaniku_info_pealkiri">Omaniku info</string>
+
     <string name="emoji_kirjeldus">Emoji, mis kujutab umbkaudselt antud isikut</string>
 </resources>

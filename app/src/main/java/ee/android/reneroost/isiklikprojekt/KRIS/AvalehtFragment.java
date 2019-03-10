@@ -49,9 +49,12 @@ public class AvalehtFragment extends Fragment implements View.OnClickListener{
                 kinnisvaraNimiTekstiVaade.setText(kinnisvara.saaKinnisvaraNimi());
             }
         }
-
         Button vahetaKinnisvaraNupp = (Button) vaade.findViewById(R.id.muuda_valitud_kinnisvara_nupp);
         vahetaKinnisvaraNupp.setOnClickListener(this);
+
+
+        // Toimingud kinnisvaraga
+
 
         return vaade;
     }
