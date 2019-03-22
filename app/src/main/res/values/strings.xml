@@ -1,11 +1,11 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">KRIS0</string>
 
     <string name="vali_teine_kasutaja_nupp">Vali muu kasutaja</string>
     <string name="kasutaja_nimi_abitekst">Kasutajanimi</string>
     <string name="kasutaja_roll_abitekst">Kasutaja roll</string>
 
-    <string name="valitud_kinnisvara_abitekst">Valitud kinnisvara</string>
+    <string name="valitud_kinnisvara_abitekst" tools:ignore="ExtraTranslation">Valitud kinnisvara</string>
     <string name="vali_teine_kinnisvara_nupp">Vali muu kinnisvara</string>
 
     <string name="toimingud_kinnisvaraga">Toimingud kinnisvaraga</string>

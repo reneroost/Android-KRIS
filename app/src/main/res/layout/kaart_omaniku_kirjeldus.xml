@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/kaardi_vaade"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="2dp"
+    card_view:cardElevation="2dp"
+    card_view:cardCornerRadius="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/omaniku_koosnimi_teksti_vaade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="Kinnisvara pealkiri"/>
+
+        <TextView
+            android:id="@+id/omaniku_isikukood_teksti_vaade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registriosa nr"/>
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>

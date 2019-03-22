@@ -122,6 +122,7 @@
             android:layout_height="wrap_content"
             android:text="vaata omanikku"/>
             <ImageButton
+                android:id="@+id/toiming_vaata_omanikku"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/toiming_vaata_omanikku"/>
@@ -138,9 +139,10 @@
                     android:layout_height="wrap_content"
                     android:text="vaheta omanikku"/>
                 <ImageButton
+                    android:id="@+id/toiming_vaheta_omanikku"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/toiming_vaheta_omanikku_ei_toota"/>
+                    android:src="@drawable/toiming_vaheta_omanikku"/>
             </LinearLayout>
 
             <LinearLayout

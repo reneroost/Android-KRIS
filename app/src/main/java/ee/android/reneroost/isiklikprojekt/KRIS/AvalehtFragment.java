@@ -4,18 +4,23 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.UUID;
 
 public class AvalehtFragment extends Fragment implements View.OnClickListener{
 
     private static final String SILT = "AvalehtFragment";
+    private static final String DIALOOG_OMANIK = "DialoogOmanik";
+
     public static final int KUTSUNG_KOOD_ROLL = 1;
     public static final int KUTSUNG_KOOD_KINNISVARA = 2;
 
@@ -43,10 +48,13 @@ public class AvalehtFragment extends Fragment implements View.OnClickListener{
 
 
         // Kinnisvara valimine
+        String kinnisvaraOmanik = "";
         for (Kinnisvara kinnisvara: kinnisvarad) {
             if (kinnisvara.saaRegistriosaNr() == valitudKinnisvaraRO) {
                 TextView kinnisvaraNimiTekstiVaade = (TextView) vaade.findViewById(R.id.kinnisvara_teksti_vaade);
                 kinnisvaraNimiTekstiVaade.setText(kinnisvara.saaKinnisvaraNimi());
+
+                kinnisvaraOmanik = OmanikudSingleton.saaInstants().saaOmanik(kinnisvara.saaOmanikuId()).saaKoosNimi();
             }
         }
         Button vahetaKinnisvaraNupp = (Button) vaade.findViewById(R.id.muuda_valitud_kinnisvara_nupp);
@@ -54,7 +62,26 @@ public class AvalehtFragment extends Fragment implements View.OnClickListener{
 
 
         // Toimingud kinnisvaraga
+        ImageButton toimingVaataOmanikku = (ImageButton) vaade.findViewById(R.id.toiming_vaata_omanikku);
+        toimingVaataOmanikku.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentManager fragmendiHaldur = getFragmentManager();
+                String kinnisvaraOmanik = "";
+                for (Kinnisvara kinnisvara: kinnisvarad) {
+                    if (kinnisvara.saaRegistriosaNr() == valitudKinnisvaraRO) {
+                        kinnisvaraOmanik = OmanikudSingleton.saaInstants().saaOmanik(kinnisvara.saaOmanikuId()).saaKoosNimi();
+                    }
+                }
+                OmanikuInfoFragment dialoog = OmanikuInfoFragment
+                        .uusInstants(kinnisvaraOmanik);
+                assert fragmendiHaldur != null;
+                dialoog.show(fragmendiHaldur, DIALOOG_OMANIK);
+            }
+        });
 
+        ImageButton toimingVahetaOmanikku = (ImageButton) vaade.findViewById(R.id.toiming_vaheta_omanikku);
+        toimingVahetaOmanikku.setOnClickListener(this);
 
         return vaade;
     }
@@ -71,6 +98,10 @@ public class AvalehtFragment extends Fragment implements View.OnClickListener{
             case R.id.muuda_valitud_kinnisvara_nupp:
                 kavatsus = new Intent(getActivity(), KinnisvaraValimineActivity.class);
                 startActivityForResult(kavatsus, KUTSUNG_KOOD_KINNISVARA);
+                break;
+            case R.id.toiming_vaheta_omanikku:
+                kavatsus = new Intent(getActivity(), OmanikuValimineActivity.class);
+                startActivity(kavatsus);
                 break;
         }
     }

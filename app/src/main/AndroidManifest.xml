@@ -13,6 +13,7 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".RolliValimineActivity"/>
         <activity android:name=".KinnisvaraValimineActivity"/>
+        <activity android:name=".OmanikuValimineActivity"/>
         <activity android:name=".PeamineActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

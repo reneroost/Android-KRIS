@@ -1,18 +1,20 @@
 package ee.android.reneroost.isiklikprojekt.KRIS;
 
+import java.util.UUID;
+
 public class Kinnisvara {
 
     private int mRegistriosaNr;
     private String mKinnisvaraNimi;
     private String mAadress;
-    private String mOmanik;
+    private UUID mOmanikuId;
     private int mVaartusEur;
 
-    public Kinnisvara(int registriosaNr, String kinnisvaraNimi, String aadress, String omanik, int vaartusEur) {
+    public Kinnisvara(int registriosaNr, String kinnisvaraNimi, String aadress, UUID omanik, int vaartusEur) {
         mRegistriosaNr = registriosaNr;
         mKinnisvaraNimi = kinnisvaraNimi;
         mAadress = aadress;
-        mOmanik = omanik;
+        mOmanikuId = omanik;
         mVaartusEur = vaartusEur;
     }
 
@@ -28,7 +30,7 @@ public class Kinnisvara {
         return mKinnisvaraNimi;
     }
 
-    public String saaOmanikuNimi() {
-        return mOmanik;
+    public UUID saaOmanikuId() {
+        return mOmanikuId;
     }
 }

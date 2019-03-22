@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 public class KinnisvaraValimineFragment extends Fragment {
 
@@ -63,11 +64,11 @@ public class KinnisvaraValimineFragment extends Fragment {
             mOmanikuNimiTekstiVaade = (TextView) itemView.findViewById(R.id.kinnisvara_omanik_teksti_vaade);
         }
 
-        public void seo(Kinnisvara kinnisvara) {
+        public void seo(Kinnisvara kinnisvara, Omanik omanik) {
             mKinnisvara = kinnisvara;
             mKinnisvaraNimiTekstiVaade.setText(mKinnisvara.saaKinnisvaraNimi());
             mRegistriosaNrTekstiVaade.setText(mKinnisvara.saaRegistriosaNrStringina());
-            mOmanikuNimiTekstiVaade.setText(mKinnisvara.saaOmanikuNimi());
+            mOmanikuNimiTekstiVaade.setText(omanik.saaKoosNimi());
         }
 
         @Override
@@ -86,6 +87,7 @@ public class KinnisvaraValimineFragment extends Fragment {
     private class KinnisvaraAdapter extends RecyclerView.Adapter<KinnisvaraHoidja> {
 
         private List<Kinnisvara> mKinnisvarad;
+        private List<Omanik> mOmanikud;
 
         public KinnisvaraAdapter(List<Kinnisvara> kinnisvarad) {
             mKinnisvarad = kinnisvarad;
@@ -102,7 +104,9 @@ public class KinnisvaraValimineFragment extends Fragment {
         @Override
         public void onBindViewHolder(@NonNull KinnisvaraHoidja kinnisvaraHoidja, int positsioon) {
             Kinnisvara kinnisvara = mKinnisvarad.get(positsioon);
-            kinnisvaraHoidja.seo(kinnisvara);
+            UUID omanikuId = kinnisvara.saaOmanikuId();
+            Omanik omanik = OmanikudSingleton.saaInstants().saaOmanik(omanikuId);
+            kinnisvaraHoidja.seo(kinnisvara, omanik);
         }
 
         @Override
