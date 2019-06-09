@@ -11,11 +11,13 @@ import android.widget.TextView;
 
 public class OmanikuInfoFragment extends DialogFragment {
 
-    private static final String ARGUMENT_OMANIK = "omanik";
+    private static final String ARGUMENT_OMANIKU_NIMI = "omaniku_nimi";
+    private static final String ARGUMENT_OMANIKU_ISIKUKOOD = "omaniku_isikukood";
 
-    public static OmanikuInfoFragment uusInstants(String omanik) {
+    public static OmanikuInfoFragment uusInstants(String omanikuNimi, String omanikuIsikukood) {
         Bundle argumendid = new Bundle();
-        argumendid.putSerializable(ARGUMENT_OMANIK, omanik);
+        argumendid.putSerializable(ARGUMENT_OMANIKU_NIMI, omanikuNimi);
+        argumendid.putSerializable(ARGUMENT_OMANIKU_ISIKUKOOD, omanikuIsikukood);
 
         OmanikuInfoFragment fragment = new OmanikuInfoFragment();
         fragment.setArguments(argumendid);
@@ -26,9 +28,22 @@ public class OmanikuInfoFragment extends DialogFragment {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         View vaade = LayoutInflater.from(getActivity())
                 .inflate(R.layout.dialoog_omaniku_info, null);
+
+        TextView omanikuNimiAbiinfoTekstiVaade = (TextView) vaade.findViewById(R.id.dialoog_omaniku_nimi_abitekst_tekstivali);
+        String omanikuNimiAbiinfo = getResources().getString(R.string.omaniku_nimi_abitekst);
+        omanikuNimiAbiinfoTekstiVaade.setText(omanikuNimiAbiinfo);
+
         TextView omanikuNimiTekstiVaade = (TextView) vaade.findViewById(R.id.dialoog_omaniku_nimi_tekstivali);
-        String omanik = (String) getArguments().getString(ARGUMENT_OMANIK);
-        omanikuNimiTekstiVaade.setText(omanik);
+        String omanikuNimi = (String) getArguments().getString(ARGUMENT_OMANIKU_NIMI);
+        omanikuNimiTekstiVaade.setText(omanikuNimi);
+
+        TextView omanikuIsikukoodAbiinfoTekstiVaade = (TextView) vaade.findViewById(R.id.dialoog_omaniku_isikukood_abitekst_tekstivali);
+        String omanikuIsikukoodAbiinfo = getResources().getString(R.string.omaniku_isikukood_abitekst);
+        omanikuIsikukoodAbiinfoTekstiVaade.setText(omanikuIsikukoodAbiinfo);
+
+        TextView omanikuIsikukoodTekstiVaade = (TextView) vaade.findViewById(R.id.dialoog_omaniku_isikukood_tekstivali);
+        String omanikuIsikukood = (String) getArguments().getString(ARGUMENT_OMANIKU_ISIKUKOOD);
+        omanikuIsikukoodTekstiVaade.setText(omanikuIsikukood);
 
         return new AlertDialog.Builder(getActivity())
                 .setView(vaade)

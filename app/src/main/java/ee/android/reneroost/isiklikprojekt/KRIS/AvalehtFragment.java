@@ -67,14 +67,16 @@ public class AvalehtFragment extends Fragment implements View.OnClickListener{
             @Override
             public void onClick(View v) {
                 FragmentManager fragmendiHaldur = getFragmentManager();
-                String kinnisvaraOmanik = "";
+                String kinnisvaraOmanikuNimi = "";
+                String kinnisVaraOmanikuIsikukood = "";
                 for (Kinnisvara kinnisvara: kinnisvarad) {
                     if (kinnisvara.saaRegistriosaNr() == valitudKinnisvaraRO) {
-                        kinnisvaraOmanik = OmanikudSingleton.saaInstants().saaOmanik(kinnisvara.saaOmanikuId()).saaKoosNimi();
+                        kinnisvaraOmanikuNimi = OmanikudSingleton.saaInstants().saaOmanik(kinnisvara.saaOmanikuId()).saaKoosNimi();
+                        kinnisVaraOmanikuIsikukood = OmanikudSingleton.saaInstants().saaOmanik(kinnisvara.saaOmanikuId()).saaIsikukoodStringina();
                     }
                 }
                 OmanikuInfoFragment dialoog = OmanikuInfoFragment
-                        .uusInstants(kinnisvaraOmanik);
+                        .uusInstants(kinnisvaraOmanikuNimi, kinnisVaraOmanikuIsikukood);
                 assert fragmendiHaldur != null;
                 dialoog.show(fragmendiHaldur, DIALOOG_OMANIK);
             }

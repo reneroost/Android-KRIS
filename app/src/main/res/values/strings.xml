@@ -18,6 +18,8 @@
 
 
     <string name="omaniku_info_pealkiri">Omaniku info</string>
+    <string name="omaniku_nimi_abitekst">Nimi</string>
+    <string name="omaniku_isikukood_abitekst">Isikukood</string>
 
     <string name="emoji_kirjeldus">Emoji, mis kujutab umbkaudselt antud isikut</string>
 </resources>
