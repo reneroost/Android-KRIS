@@ -1,4 +1,4 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
+package ee.android.reneroost.isiklikprojekt.KRIS.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,6 +17,12 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
+import ee.android.reneroost.isiklikprojekt.KRIS.mudel.kinnisvara.Kinnisvara;
+import ee.android.reneroost.isiklikprojekt.KRIS.mudel.kinnisvara.KinnisvaradSingleton;
+import ee.android.reneroost.isiklikprojekt.KRIS.mudel.kinnisvara.Omanik;
+import ee.android.reneroost.isiklikprojekt.KRIS.mudel.kinnisvara.OmanikudSingleton;
+import ee.android.reneroost.isiklikprojekt.KRIS.R;
+
 public class KinnisvaraValimineFragment extends Fragment {
 
     public static final String EKSTRA_KINNISVARA_RO = "ee.android.reneroost.isiklikprojekt.KRIS.kinnisvara_id";
@@ -29,7 +35,7 @@ public class KinnisvaraValimineFragment extends Fragment {
                              Bundle savedInstanceState) {
         View vaade = taispuhuja.inflate(R.layout.fragment_nimekirjast_valimine, konteiner, false);
 
-        mKinnisvaraTaaskasutajaVaade = (RecyclerView) vaade.findViewById(R.id.nimekirjast_valimine_taaskasutaja_vaade);
+        mKinnisvaraTaaskasutajaVaade = vaade.findViewById(R.id.nimekirjast_valimine_taaskasutaja_vaade);
         mKinnisvaraTaaskasutajaVaade.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         uuendaUI();
@@ -59,9 +65,9 @@ public class KinnisvaraValimineFragment extends Fragment {
             super(taispuhuja.inflate(R.layout.kaart_kinnisvara_kirjeldus, vanem, false));
             itemView.setOnClickListener(this);
 
-            mKinnisvaraNimiTekstiVaade = (TextView) itemView.findViewById(R.id.kinnisvara_nimi_teksti_vaade);
-            mRegistriosaNrTekstiVaade = (TextView) itemView.findViewById(R.id.kinnisvara_registriosanr_teksti_vaade);
-            mOmanikuNimiTekstiVaade = (TextView) itemView.findViewById(R.id.kinnisvara_omanik_teksti_vaade);
+            mKinnisvaraNimiTekstiVaade = itemView.findViewById(R.id.kinnisvara_nimi_teksti_vaade);
+            mRegistriosaNrTekstiVaade = itemView.findViewById(R.id.kinnisvara_registriosanr_teksti_vaade);
+            mOmanikuNimiTekstiVaade = itemView.findViewById(R.id.kinnisvara_omanik_teksti_vaade);
         }
 
         public void seo(Kinnisvara kinnisvara, Omanik omanik) {

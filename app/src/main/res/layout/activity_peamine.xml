@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="ee.android.reneroost.isiklikprojekt.KRIS.PeamineActivity">
+    tools:context="ee.android.reneroost.isiklikprojekt.KRIS.activity.PeamineActivity">
 
 
     <include layout="@layout/tooriistariba_peamine"

@@ -1,4 +1,4 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
+package ee.android.reneroost.isiklikprojekt.KRIS.mudel.kinnisvara;
 
 import java.util.UUID;
 
@@ -32,5 +32,9 @@ public class Kinnisvara {
 
     public UUID saaOmanikuId() {
         return mOmanikuId;
+    }
+
+    public void maaraOmanikuId(UUID omanikuId) {
+        mOmanikuId = omanikuId;
     }
 }

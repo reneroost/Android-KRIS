@@ -1,10 +1,8 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
+package ee.android.reneroost.isiklikprojekt.KRIS.mudel.apikasutajad;
 
 public class Kohtunikuabi extends Kasutaja {
 
-    // erinevad oigused, mida halduritel pole
-    // boolean saab muuta omanikku = true
-    // boolean ja nii edasi
+    // Kohtunikeabidel saavad olema erinevad lisa-oigused, mida halduritel pole
     boolean onKohtunikuabi = true;
 
     public Kohtunikuabi(String nimi, int amet, int emojiId, boolean sugu, boolean juukseVarv) {

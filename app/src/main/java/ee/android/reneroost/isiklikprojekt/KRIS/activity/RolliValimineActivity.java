@@ -1,4 +1,4 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
+package ee.android.reneroost.isiklikprojekt.KRIS.activity;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
+import ee.android.reneroost.isiklikprojekt.KRIS.R;
+import ee.android.reneroost.isiklikprojekt.KRIS.fragment.RolliValimineFragment;
+
 public class RolliValimineActivity extends AppCompatActivity {
 
     private static final String SILT = "RolliVaimineActivity";
@@ -21,15 +24,15 @@ public class RolliValimineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rolli_valimine);
 
-        android.support.v7.widget.Toolbar tooriistariba = (Toolbar) findViewById(R.id.tooriistariba);
+        android.support.v7.widget.Toolbar tooriistariba = findViewById(R.id.tooriistariba);
         setSupportActionBar(tooriistariba);
         tooriistariba.setTitle(looTooriistaribaPealkiri());
 
         RollidPagerAdapter pagerAdapter = new RollidPagerAdapter(getSupportFragmentManager());
-        ViewPager pager = (ViewPager) findViewById(R.id.pager);
+        ViewPager pager = findViewById(R.id.pager);
         pager.setAdapter(pagerAdapter);
 
-        TabLayout vaheleheLayout = (TabLayout) findViewById(R.id.vahelehed);
+        TabLayout vaheleheLayout = findViewById(R.id.vahelehed);
         vaheleheLayout.setupWithViewPager(pager);
     }
 

@@ -1,4 +1,4 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
+package ee.android.reneroost.isiklikprojekt.KRIS.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,11 @@ import android.widget.Toast;
 
 import java.util.List;
 import java.util.Objects;
+
+import ee.android.reneroost.isiklikprojekt.KRIS.kontroller.KasutajaKirjeldusAdapter;
+import ee.android.reneroost.isiklikprojekt.KRIS.R;
+import ee.android.reneroost.isiklikprojekt.KRIS.mudel.apikasutajad.Kasutaja;
+import ee.android.reneroost.isiklikprojekt.KRIS.mudel.apikasutajad.KasutajadSingleton;
 
 public class RolliValimineFragment extends Fragment {
 

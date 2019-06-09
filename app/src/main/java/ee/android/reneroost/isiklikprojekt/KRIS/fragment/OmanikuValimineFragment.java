@@ -1,4 +1,4 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
+package ee.android.reneroost.isiklikprojekt.KRIS.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +15,12 @@ import android.widget.Toast;
 
 import java.util.List;
 import java.util.Objects;
-import java.util.UUID;
+
+import ee.android.reneroost.isiklikprojekt.KRIS.mudel.kinnisvara.Kinnisvara;
+import ee.android.reneroost.isiklikprojekt.KRIS.mudel.kinnisvara.KinnisvaradSingleton;
+import ee.android.reneroost.isiklikprojekt.KRIS.mudel.kinnisvara.Omanik;
+import ee.android.reneroost.isiklikprojekt.KRIS.mudel.kinnisvara.OmanikudSingleton;
+import ee.android.reneroost.isiklikprojekt.KRIS.R;
 
 public class OmanikuValimineFragment extends Fragment {
 
@@ -24,12 +29,14 @@ public class OmanikuValimineFragment extends Fragment {
     private RecyclerView mOmanikuTaaskasutajaVaade;
     private OmanikuValimineFragment.OmanikuAdapter mAdapter;
 
+    private List<Kinnisvara> kinnisvarad = KinnisvaradSingleton.saaInstants().saaKinnisvarad();
+
     @Override
     public View onCreateView(LayoutInflater taispuhuja, ViewGroup konteiner,
                              Bundle savedInstanceState) {
         View vaade = taispuhuja.inflate(R.layout.fragment_nimekirjast_valimine, konteiner, false);
 
-        mOmanikuTaaskasutajaVaade = (RecyclerView) vaade.findViewById(R.id.nimekirjast_valimine_taaskasutaja_vaade);
+        mOmanikuTaaskasutajaVaade = vaade.findViewById(R.id.nimekirjast_valimine_taaskasutaja_vaade);
         mOmanikuTaaskasutajaVaade.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         uuendaUI();
@@ -57,8 +64,8 @@ public class OmanikuValimineFragment extends Fragment {
         public OmanikuHoidja(LayoutInflater taispuhuja, ViewGroup vanem) {
             super(taispuhuja.inflate(R.layout.kaart_omaniku_kirjeldus, vanem, false));
             itemView.setOnClickListener(this);
-            mOmanikuNimiTekstiVaade = (TextView) itemView.findViewById(R.id.omaniku_koosnimi_teksti_vaade);
-            mOmanikuIsikukoodiTekstiVaade = (TextView) itemView.findViewById(R.id.omaniku_isikukood_teksti_vaade);
+            mOmanikuNimiTekstiVaade = itemView.findViewById(R.id.omaniku_koosnimi_teksti_vaade);
+            mOmanikuIsikukoodiTekstiVaade = itemView.findViewById(R.id.omaniku_isikukood_teksti_vaade);
         }
 
         public void seo(Omanik omanik) {
@@ -73,8 +80,15 @@ public class OmanikuValimineFragment extends Fragment {
                     mOmanik.saaKoosNimi() + getResources().getString(R.string.valitud), Toast.LENGTH_LONG)
                     .show();
 
+            int kinnisvaraRO = getActivity().getIntent().getIntExtra("valitudKinnisvaraRO", 0);
+            for (Kinnisvara kinnisvara: kinnisvarad) {
+                if (kinnisvara.saaRegistriosaNr() == kinnisvaraRO) {
+                    kinnisvara.maaraOmanikuId(mOmanik.saaId());
+                }
+            }
+
             Intent andmed = new Intent();
-            andmed.putExtra(EKSTRA_OMANIKU_ID, mOmanik.saaId());
+            //andmed.putExtra(EKSTRA_OMANIKU_ID, mOmanik.saaId().toString());
             Objects.requireNonNull(getActivity()).setResult(Activity.RESULT_OK, andmed);
             getActivity().finish();
         }

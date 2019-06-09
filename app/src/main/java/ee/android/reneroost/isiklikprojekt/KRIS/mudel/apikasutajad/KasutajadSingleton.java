@@ -1,9 +1,9 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
-
-import android.content.Context;
+package ee.android.reneroost.isiklikprojekt.KRIS.mudel.apikasutajad;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ee.android.reneroost.isiklikprojekt.KRIS.R;
 
 public class KasutajadSingleton {
     public static KasutajadSingleton sKasutajadSingleton;

@@ -1,4 +1,4 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
+package ee.android.reneroost.isiklikprojekt.KRIS.mudel.kinnisvara;
 
 import java.util.ArrayList;
 import java.util.List;

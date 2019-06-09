@@ -5,10 +5,17 @@
     <string name="kasutaja_nimi_abitekst">Kasutajanimi</string>
     <string name="kasutaja_roll_abitekst">Kasutaja roll</string>
 
-    <string name="valitud_kinnisvara_abitekst" tools:ignore="ExtraTranslation">Valitud kinnisvara</string>
+    <string name="valitud_kinnisvara_nimi_abitekst" tools:ignore="ExtraTranslation">Valitud kinnisvara</string>
+    <string name="valiktud_kinnisvara_omaniku_nimi_abitekst">Omanik</string>
     <string name="vali_teine_kinnisvara_nupp">Vali muu kinnisvara</string>
 
     <string name="toimingud_kinnisvaraga">Toimingud kinnisvaraga</string>
+    <string name="toiming_vaata_omanikku">vaata omanikku</string>
+    <string name="toiming_vaheta_omanikku">vaheta omanikku</string>
+    <string name="toiming_aresti_kinnisvara">aresti kinnisvara</string>
+    <string name="toiming_lisa_kaasomanik">lisa kaasomanik</string>
+    <string name="toiming_lisa_uhisomanik">lisa ühisomanik</string>
+    <string name="toiming_vaata_asukohta">vaata asukohta</string>
 
 
     <string name="kohtunikuabid_vaheleht">Kohtunikuabid</string>

@@ -77,11 +77,33 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="8"
-                android:text="@string/valitud_kinnisvara_abitekst"
+                android:text="@string/valitud_kinnisvara_nimi_abitekst"
                 style="@style/AvalehtAbitekst"/>
 
             <TextView
-                android:id="@+id/kinnisvara_teksti_vaade"
+                android:id="@+id/kinnisvara_nimi_teksti_vaade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                style="@style/AvalehtPõhitekst"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="@string/valiktud_kinnisvara_omaniku_nimi_abitekst"
+                style="@style/AvalehtAbitekst"/>
+
+            <TextView
+                android:id="@+id/kinnisvara_omanik_teksti_vaade"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="10"
@@ -120,12 +142,13 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="vaata omanikku"/>
+            android:text="@string/toiming_vaata_omanikku"/>
             <ImageButton
                 android:id="@+id/toiming_vaata_omanikku"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/toiming_vaata_omanikku"/>
+                android:src="@drawable/toiming_vaata_omanikku"
+                android:contentDescription="@string/toiming_vaata_omanikku"/>
             </LinearLayout>
 
             <LinearLayout
@@ -137,12 +160,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="vaheta omanikku"/>
+                    android:text="@string/toiming_vaheta_omanikku"/>
                 <ImageButton
                     android:id="@+id/toiming_vaheta_omanikku"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/toiming_vaheta_omanikku"/>
+                    android:src="@drawable/toiming_vaheta_omanikku"
+                    android:contentDescription="@string/toiming_vaheta_omanikku"/>
             </LinearLayout>
 
             <LinearLayout
@@ -154,11 +178,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="aresti kinnisvara"/>
+                    android:text="@string/toiming_aresti_kinnisvara"/>
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/toiming_aresti_kinnisvara_ei_toota"/>
+                    android:src="@drawable/toiming_aresti_kinnisvara_ei_toota"
+                    android:contentDescription="@string/toiming_aresti_kinnisvara"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -177,11 +202,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="lisa kaasomanik"/>
+                    android:text="@string/toiming_lisa_kaasomanik"/>
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/toiming_lisa_kaasomanik_ei_toota"/>
+                    android:src="@drawable/toiming_lisa_kaasomanik_ei_toota"
+                    android:contentDescription="@string/toiming_lisa_kaasomanik"/>
             </LinearLayout>
 
             <LinearLayout
@@ -193,11 +219,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="lisa ühisomanik"/>
+                    android:text="@string/toiming_lisa_uhisomanik"/>
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/toiming_lisa_uhisomanik_ei_toota"/>
+                    android:src="@drawable/toiming_lisa_uhisomanik_ei_toota"
+                    android:contentDescription="@string/toiming_lisa_uhisomanik"/>
             </LinearLayout>
 
             <LinearLayout
@@ -209,11 +236,12 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="vaata asukohta"/>
+                    android:text="@string/toiming_vaata_asukohta"/>
                 <ImageButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/toiming_vaata_asukohta_ei_toota"/>
+                    android:src="@drawable/toiming_vaata_asukohta_ei_toota"
+                    android:contentDescription="@string/toiming_vaata_asukohta"/>
             </LinearLayout>
 
         </LinearLayout>

@@ -1,6 +1,5 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
+package ee.android.reneroost.isiklikprojekt.KRIS.activity;
 
-import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.app.Fragment;
@@ -12,6 +11,9 @@ import android.util.Log;
 
 import java.util.Objects;
 
+import ee.android.reneroost.isiklikprojekt.KRIS.fragment.AvalehtFragment;
+import ee.android.reneroost.isiklikprojekt.KRIS.R;
+
 public class PeamineActivity extends AppCompatActivity {
 
     private static final String SILT = "PeamineActivity";
@@ -21,7 +23,7 @@ public class PeamineActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_peamine);
 
-        Toolbar tooriistariba = (Toolbar) findViewById(R.id.tooriistariba);
+        Toolbar tooriistariba = findViewById(R.id.tooriistariba);
         setSupportActionBar(tooriistariba);
         Objects.requireNonNull(getSupportActionBar()).setTitle(looTooriistaribaPealkiri());
 

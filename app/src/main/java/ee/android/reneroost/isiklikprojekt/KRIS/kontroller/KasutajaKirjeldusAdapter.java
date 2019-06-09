@@ -1,15 +1,16 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
+package ee.android.reneroost.isiklikprojekt.KRIS.kontroller;
 
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import ee.android.reneroost.isiklikprojekt.KRIS.R;
 
 public class KasutajaKirjeldusAdapter extends RecyclerView.Adapter<KasutajaKirjeldusAdapter.VaateHoidja> {
 
@@ -17,7 +18,7 @@ public class KasutajaKirjeldusAdapter extends RecyclerView.Adapter<KasutajaKirje
     private int[] pildiId;
     private Listener kuular;
 
-    interface Listener {
+    public interface Listener {
         void onClick(int positsioon);
     }
 
@@ -56,10 +57,10 @@ public class KasutajaKirjeldusAdapter extends RecyclerView.Adapter<KasutajaKirje
     @Override
     public void onBindViewHolder(VaateHoidja hoidja, final int positsioon) {
         CardView kaardiVaade = hoidja.kaardiVaade;
-        ImageView pildiVaade = (ImageView) kaardiVaade.findViewById(R.id.kasutaja_pilt);
+        ImageView pildiVaade = kaardiVaade.findViewById(R.id.kasutaja_pilt);
         Drawable joonistatav = ContextCompat.getDrawable(kaardiVaade.getContext(), pildiId[positsioon]);
         pildiVaade.setImageDrawable(joonistatav);
-        TextView tekstiVaade = (TextView) kaardiVaade.findViewById(R.id.kasutaja_nimi);
+        TextView tekstiVaade = kaardiVaade.findViewById(R.id.kasutaja_nimi);
         tekstiVaade.setText(nimi[positsioon]);
 
         kaardiVaade.setOnClickListener(new View.OnClickListener() {

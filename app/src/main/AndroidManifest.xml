@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".RolliValimineActivity"/>
-        <activity android:name=".KinnisvaraValimineActivity"/>
-        <activity android:name=".OmanikuValimineActivity"/>
-        <activity android:name=".PeamineActivity">
+        <activity android:name=".activity.RolliValimineActivity"/>
+        <activity android:name=".activity.KinnisvaraValimineActivity"/>
+        <activity android:name=".activity.OmanikuValimineActivity"/>
+        <activity android:name=".activity.PeamineActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

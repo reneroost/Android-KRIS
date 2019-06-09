@@ -1,4 +1,4 @@
-package ee.android.reneroost.isiklikprojekt.KRIS;
+package ee.android.reneroost.isiklikprojekt.KRIS.mudel.apikasutajad;
 
 public class Haldur extends Kasutaja {
 
